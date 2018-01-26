@@ -1,5 +1,5 @@
 .BreadBottom {
-    height: 13%;
+    height: 19%;
     width: 80%;
     background: linear-gradient(#F08E4A, #e27b36);
     border-radius: 0 0 30px 30px;
@@ -8,7 +8,7 @@
 }
 
 .BreadTop {
-    height: 20%;
+    height: 29%;
     width: 80%;
     background: linear-gradient(#bc581e, #e27b36);
     border-radius: 50% 50% 0 0;
@@ -90,7 +90,7 @@
 }
 
 .Cheese {
-    width: 90%;
+    width: 80%;
     height: 4.5%;
     margin: 2% auto;
     background: linear-gradient(#f4d004, #d6bb22);
@@ -107,7 +107,22 @@
 
 .Tuna {
     width: 80%;
-    height: 3%;
+    height: 8%;
     background: linear-gradient(#ef9e88, #fbc2ad);
     margin: 2% auto;
+    border-radius: 15px;
+}
+.Tomato {
+    width: 85%;
+    height: 7%;
+    margin: 2% auto;
+    background: linear-gradient(#ef0101, #ec6a43);
+    border-radius: 20px;
+}
+.Pickle {
+    width: 85%;
+    height: 5%;
+    margin: 2% auto;
+    background: linear-gradient(#165712, #6c993d);
+    border-radius: 20px;
 }

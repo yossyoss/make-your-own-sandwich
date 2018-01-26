@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './SandwichIngredient.css';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 class SandwichIngredient extends Component {
     render(){
@@ -23,11 +23,17 @@ class SandwichIngredient extends Component {
                 case ('salad'):
                         ingredient = <div className={classes.Salad}></div>;
                         break;
+                case ('tomato'):
+                        ingredient = <div className={classes.Tomato}></div>;
+                        break;
                 case ('cheese'):
                         ingredient = <div className={classes.Cheese}></div>;
                         break;        
                 case ('tuna'):
                         ingredient = <div className={classes.Tuna}></div>;
+                        break; 
+                case ('pickle'):
+                        ingredient = <div className={classes.Pickle}></div>;
                         break; 
                 default:
                      ingredient = null;
@@ -36,8 +42,8 @@ class SandwichIngredient extends Component {
     }
 }
 
-SandwichIngredient.PropTypes = {
-    type: PropTypes.string.isRequired
+SandwichIngredient.propTypes = {
+    type: propTypes.string.isRequired
 };
 
 export default SandwichIngredient;
