@@ -4,13 +4,13 @@ import SandwichIngredient from './SandwichIngredient/SandwichIngredient';
 const sandwich = (props) => {
     let transformedIngredients = Object.keys(props.ingredients)
     .map(igKey => {
-        return [...Array(props.ingredients[igKey])]   // an empty array like [,,] for example
+        return [...Array(props.ingredients[igKey])]   // create an empty array like [,,] for example
             .map((_, i) => {  
                 return <SandwichIngredient key={igKey + i} type={igKey} />;
             }); 
     })
     .reduce((arr, el) => {
-        return arr.concat(el)
+        return arr.concat(el)  //create an array by concat older arrays
     },[]);
     if( transformedIngredients.length === 0) {
         transformedIngredients = <p>Please start adding ingredients!</p>
