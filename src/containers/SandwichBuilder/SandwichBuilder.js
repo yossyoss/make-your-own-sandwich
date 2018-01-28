@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Aux from '../../hoc/Auxx';
 import Sandwich from '../../components/Sandwich/Sandwich'
 import BuildControls from '../../components/Sandwich/BuildControls/BuildControls'
+import Model from '../../components/UI/Model/Model';
+import OrderSummary from '../../components/Sandwich/OrderSuumary/OrderSuumary'
 const INGREDIENT_PRICES = {
     salad: 0.5,
     cheese: 0.4,
@@ -18,7 +20,8 @@ class SandwichBuilder extends Component {
              meat: 0
          },
          totalPrice: 4,
-         purchaseable: false   
+         purchaseable: false,
+         purchasing: false   
     }
 
     updatePurchaseState(ingredients){
@@ -62,6 +65,11 @@ class SandwichBuilder extends Component {
         this.setState({totalPrice: newPrice, ingredients: updateIngredients})
         this.updatePurchaseState(updateIngredients);
     }
+
+    purchaseHandler = () => {
+        this.setState({purchasing: true});
+    }
+
     render(){
         const disableInfo = {
             ...this.state.ingredients
@@ -71,12 +79,16 @@ class SandwichBuilder extends Component {
         }
         return(
             <Aux>
+                <Model show={this.state.purchasing}>
+                    <OrderSummary ingredients={this.state.ingredients}/>
+                </Model>
                 <Sandwich ingredients={this.state.ingredients}/>
                 <BuildControls 
                     price={this.state.totalPrice}
                     ingredientAdded={this.addIngredientHandler}
                     ingredientRemoved={this.removeIngredientHandler}
                     purchaseable={this.state.purchaseable}
+                    ordered={this.purchaseHandler}
                     disabled={disableInfo}/>
             </Aux>
         );
