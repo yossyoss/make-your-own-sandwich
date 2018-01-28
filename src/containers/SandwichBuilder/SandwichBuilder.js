@@ -70,6 +70,10 @@ class SandwichBuilder extends Component {
         this.setState({purchasing: true});
     }
 
+    purchaseCancelHandler = () => {
+        this.setState({purchasing: false});
+    }
+
     render(){
         const disableInfo = {
             ...this.state.ingredients
@@ -79,7 +83,7 @@ class SandwichBuilder extends Component {
         }
         return(
             <Aux>
-                <Model show={this.state.purchasing}>
+                <Model show={this.state.purchasing} modelClosed={this.purchaseCancelHandler}> 
                     <OrderSummary ingredients={this.state.ingredients}/>
                 </Model>
                 <Sandwich ingredients={this.state.ingredients}/>
